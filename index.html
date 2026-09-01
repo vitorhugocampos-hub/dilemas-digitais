@@ -1,0 +1,218 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilemas Digitais e Soluções</title>
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #183C63;
+            color: #FFFFFF;
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        main {
+            background-color: #d4adcf;
+            color: #183C63;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        article, section.quiz-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        .quiz-container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .imagem {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        div p {
+            font-weight: normal;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 5px;
+        }
+
+        footer {
+            background-color: #183C63;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .quiz-opcao {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Dilemas Digitais e Soluções</h1>
+        <p>Refletindo sobre o impacto da tecnologia no nosso dia a dia</p>
+        <button>❤️ <span>0</span></button>
+        <button>👍 <span>0</span></button>
+    </header>
+
+    <main>
+        <article>
+            <div>
+                <img src="https://via.placeholder.com/80" alt="Ícone de privacidade">
+                <h2>1. Exposição Excessiva e Privacidade</h2>
+                <p class="artigo-autor">Por: Alexandra</p>
+                <p><strong>Dilema:</strong> Compartilhar detalhes da vida pessoal nas redes sociais pode comprometer a segurança e a privacidade.</p>
+                <p><strong>Solução:</strong> Ajuste as configurações de privacidade das suas contas, evite postar localizações em tempo real e pense bem antes de publicar dados sensíveis.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/200" class="imagem" alt="Imagem sobre privacidade digital">
+            </div>
+        </article>
+
+        <article>
+            <div>
+                <img src="https://via.placeholder.com/80" alt="Ícone de tempo de tela">
+                <h2>2. Vício em Telas e Uso Exagerado</h2>
+                <p class="artigo-autor">Por: Alexandra</p>
+                <p><strong>Dilema:</strong> O uso contínuo de smartphones prejudica o sono, a atenção e os relacionamentos presenciais.</p>
+                <p><strong>Solução:</strong> Defina limites de tempo diários para redes sociais, pratique períodos de detox digital e evite o uso de telas antes de dormir.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/200" class="imagem" alt="Imagem sobre uso de telas">
+            </div>
+        </article>
+
+        <article>
+            <div>
+                <img src="https://via.placeholder.com/80" alt="Ícone de Fake News">
+                <h2>3. Desinformação e Fake News</h2>
+                <p class="artigo-autor">Por: Alexandra</p>
+                <p><strong>Dilema:</strong> A rápida disseminação de notícias falsas gera desinformação e pânico na sociedade.</p>
+                <p><strong>Solução:</strong> Cheque a fonte da informação antes de compartilhar, consulte canais de notícias confiáveis e leia o conteúdo completo além da manchete.</p>
+                <button>❤️ <span>0</span></button>
+                <button>👎 <span>0</span></button>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/200" class="imagem" alt="Imagem sobre combate à desinformação">
+            </div>
+        </article>
+
+        <section class="quiz-container">
+            <h2>Quiz: Qual o seu nível de conscientização digital?</h2>
+            <p> O que você faz ao receber uma notícia chocante no grupo de mensagens?</p>
+            
+            <div class="quiz-opcao">
+                <input type="radio" id="op1" name="quiz" value="errado">
+                <label for="op1">Encaminho imediatamente para todos os meus contatos.</label>
+            </div>
+            <div class="quiz-opcao">
+                <input type="radio" id="op2" name="quiz" value="certo">
+                <label for="op2">Verifico em sites de busca ou agências de checagem antes de repassar.</label>
+            </div>
+            <div class="quiz-opcao">
+                <input type="radio" id="op3" name="quiz" value="errado">
+                <label for="op3">Ignoro totalmente sem ler.</label>
+            </div>
+
+            <button onclick="verificarQuiz()">Enviar Resposta</button>
+            <p id="resultado-quiz"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Meu Blog Tech | Desenvolvido por Alexandra</p>
+    </footer>
+
+    <script>
+        // Lógica de curtidas dos botões
+        const botoes = document.querySelectorAll("button");
+        botoes.forEach(function (botao) {
+            let curtiu = false;
+            botao.addEventListener("click", function () {
+                let texto = botao.querySelector("span");
+                if (texto) {
+                    if (curtiu === false) {
+                        texto.textContent++;
+                        curtiu = true;
+                    } else {
+                        texto.textContent--;
+                        curtiu = false;
+                    }
+                }
+            });
+        });
+
+        // Lógica do Quiz
+        function verificarQuiz() {
+            const opcoes = document.getElementsByName("quiz");
+            const resultado = document.getElementById("resultado-quiz");
+            let selecionado = false;
+
+            for (let op of opcoes) {
+                if (op.checked) {
+                    selecionado = true;
+                    if (op.value === "certo") {
+                        resultado.textContent = " Resposta correta! Sempre confirme as informações antes de compartilhar.";
+                        resultado.style.color = "green";
+                    } else {
+                        resultado.textContent = " Ação incorreta. O ideal é checar os fatos antes de repassar informações.";
+                        resultado.style.color = "red";
+                    }
+                }
+            }
+
+            if (!selecionado) {
+                resultado.textContent = "Por favor, selecione uma opção.";
+                resultado.style.color = "black";
+            }
+        }
+    </script>
+</body>
+
+</html>
